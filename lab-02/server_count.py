@@ -10,10 +10,10 @@ while 1:
     message, address = serverSocket.recvfrom(buffer_len)
 
     print("message from: ", address)
-    message = message.decode('utf-8')
-
+    message = message.decode('utf-8').lower()
+    
     n_vowels = 0
-    for v in ['a','e','i','o','u']:
+    for v in ['a','e','i','o','u', ' ']:
         n_vowels += message.count(v)
     n_consonant = len(message) - n_vowels
     
